@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاختبارات النفسية - نفس مطمئنة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Naskh Arabic', 'Cairo', serif;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+            color: #2C3E50;
+            line-height: 1.7;
+            direction: rtl;
+        }
+        .navbar {
+            background: #006D77;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 40px;
+        }
+        .logo span { color: #F4A261; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover { border-bottom-color: #F4A261; transform: translateY(-2px); }
+        .page-header {
+            background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .tests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .test-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border-right: 5px solid #F4A261;
+            cursor: pointer;
+        }
+        .test-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px rgba(0,0,0,0.12); }
+        .test-card i { font-size: 2.8rem; color: #006D77; margin-bottom: 15px; }
+        .test-card h4 { font-size: 1.3rem; margin-bottom: 12px; color: #2C3E50; }
+        .test-card p { font-size: 0.95rem; color: #5A6E7A; }
+        .info-box {
+            background: #E8F4F0;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-right: 5px solid #006D77;
+        }
+        footer { background: #006D77; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 1.8rem; }
+            .nav-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">نفس <span>مطمئنة</span></div>
+            <div class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="booking.html">المعالجون والحجز</a>
+                <a href="tests.html">الاختبارات</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1><i class="fas fa-clinic-medical"></i> التقييمات والاختبارات</h1>
+        <p>خطوتك الأولى نحو الفهم الأعمق لنفسك</p>
+    </div>
+
+    <div class="container">
+        <div class="info-box">
+            <i class="fas fa-info-circle" style="font-size: 2rem; color: #006D77; margin-bottom: 10px; display: inline-block;"></i>
+            <p>هذه الاختبارات هي أدوات تقييم أولية تساعدنا على فهم حالتك النفسية بشكل أفضل. النتائج سرية تماماً وتستخدم فقط لوضع خطة علاجية مناسبة لك.</p>
+        </div>
+
+        <div class="tests-grid">
+            <div class="test-card" onclick="window.open('https://forms.gle/GtWSps5mJmfqtpDK7', '_blank')">
+                <i class="fas fa-file-medical"></i>
+                <h4>استبيان البداية</h4>
+                <p>معلومات أولية عن رحلتك العلاجية</p>
+            </div>
+            <div class="test-card" onclick="window.open('https://forms.gle/afY9MMq8MK1oAai7A', '_blank')">
+                <i class="fas fa-user-edit"></i>
+                <h4>اختبار الشخصية</h4>
+                <p>تعرف على نمط شخصيتك</p>
+            </div>
+            <div class="test-card" onclick="window.open('https://forms.gle/Cz9JjuRYer3D6KrJ6', '_blank')">
+                <i class="fas fa-wind"></i>
+                <h4>اختبار القلق</h4>
+                <p>مقياس مستوى القلق</p>
+            </div>
+            <div class="test-card" onclick="window.open('https://forms.gle/kjbGv3hRGpZK9JFn7', '_blank')">
+                <i class="fas fa-cloud-rain"></i>
+                <h4>اختبار الاكتئاب</h4>
+                <p>مقياس مستوى الاكتئاب</p>
+            </div>
+            <div class="test-card" onclick="window.open('https://forms.gle/F6sxCMyVuof1ZSnU9', '_blank')">
+                <i class="fas fa-bolt"></i>
+                <h4>ADHD للبالغين</h4>
+                <p>فرط الحركة وتشتت الانتباه</p>
+            </div>
+            <div class="test-card" onclick="window.open('https://forms.gle/uVjd9sN4rYoLx2i57', '_blank')">
+                <i class="fas fa-redo"></i>
+                <h4>الوسواس القهري (OCD)</h4>
+                <p>اختبار متخصص</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 مركز نفس مطمئنة - جميع الحقوق محفوظة | تحت إشراف د. ربيع حمادة</p>
+    </footer>
+</body>
+</html>

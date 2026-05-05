@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نفس مطمئنة - د. ربيع حمادة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Naskh Arabic', 'Cairo', serif;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+            color: #2C3E50;
+            line-height: 1.7;
+            direction: rtl;
+        }
+        .navbar {
+            background: #006D77;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 40px;
+        }
+        .logo span { color: #F4A261; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover { border-bottom-color: #F4A261; transform: translateY(-2px); }
+        .hero {
+            background: linear-gradient(135deg, #006D77 0%, #2A9D8F 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before { content: "🧠"; position: absolute; font-size: 300px; opacity: 0.05; bottom: -50px; left: -50px; pointer-events: none; }
+        .hero::after { content: "💚"; position: absolute; font-size: 250px; opacity: 0.05; top: -30px; right: -40px; pointer-events: none; }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 15px; }
+        .hero h2 { font-size: 1.4rem; font-weight: 500; margin-bottom: 10px; opacity: 0.95; }
+        .hero .specialty { font-size: 1.2rem; margin-bottom: 25px; opacity: 0.85; }
+        .hero .tagline {
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            margin-top: 15px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .hero-image { margin: -50px auto 40px; max-width: 1100px; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); position: relative; z-index: 10; }
+        .hero-image img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
+        .hero-image:hover img { transform: scale(1.02); }
+        .section { padding: 60px 0; border-bottom: 1px solid #E2E8F0; }
+        .section-title { text-align: center; font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; color: #006D77; position: relative; display: inline-block; width: 100%; }
+        .section-title:after { content: ''; display: block; width: 80px; height: 4px; background: #F4A261; margin: 10px auto 0; border-radius: 2px; }
+        .section-subtitle { text-align: center; color: #5A6E7A; margin-bottom: 50px; font-size: 1.1rem; }
+        .buttons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .main-btn {
+            background: linear-gradient(135deg, #006D77 0%, #2A9D8F 100%);
+            color: white;
+            border: none;
+            padding: 22px 50px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 25px rgba(0,109,119,0.3);
+            text-decoration: none;
+        }
+        .main-btn:hover { transform: translateY(-5px); gap: 20px; box-shadow: 0 15px 35px rgba(0,109,119,0.4); }
+        .secondary-btn {
+            background: linear-gradient(135deg, #F4A261 0%, #E76F51 100%);
+            box-shadow: 0 10px 25px rgba(244,162,97,0.3);
+        }
+        .about-text { text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; color: #4A6272; }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #E9ECEF;
+            position: relative;
+        }
+        .testimonial-card:before { content: '"'; font-size: 5rem; position: absolute; top: 10px; right: 20px; color: #006D7720; font-family: serif; }
+        .testimonial-card:hover { transform: translateY(-5px); border-color: #F4A261; }
+        .testimonial-text { font-style: italic; margin-bottom: 20px; line-height: 1.8; position: relative; z-index: 1; }
+        .client-name { font-weight: 700; color: #006D77; margin-top: 15px; display: flex; align-items: center; gap: 8px; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact-btn {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #E2E8F0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .contact-btn i { font-size: 2.2rem; }
+        .contact-btn span { font-weight: 600; color: #2C3E50; }
+        .contact-btn .detail { font-size: 0.9rem; color: #5A6E7A; }
+        .contact-btn:nth-child(1) i { color: #25D366; }
+        .contact-btn:nth-child(2) i { color: #1877F2; }
+        .contact-btn:nth-child(3) i { color: #EA4335; }
+        .contact-btn:hover { transform: translateY(-8px); border-color: #006D77; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        footer { background: #006D77; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .buttons-grid { flex-direction: column; align-items: center; }
+            .main-btn { width: 90%; justify-content: center; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">نفس <span>مطمئنة</span></div>
+            <div class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="booking.html">المعالجون والحجز</a>
+                <a href="tests.html">الاختبارات</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>نفس مطمئنة</h1>
+            <h2>تحت إشراف د. ربيع حمادة</h2>
+            <div class="specialty">أخصائي الطب النفسي والأعصاب وعلاج الإدمان</div>
+            <div class="tagline"><i class="fas fa-users"></i> يضم نخبة من المعالجين النفسيين</div>
+            <p style="margin-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">نقدم رعاية نفسية متكاملة بسرية تامة، بمساعدة فريق متخصص لاستعادة توازنك النفسي والعاطفي.</p>
+        </div>
+    </div>
+
+    <div class="hero-image container">
+        <img src="https://placehold.co/1200x400/E2E8F0/2C3E50?text=مركز+نفس+مطمئنة" alt="نفس مطمئنة" id="mainImage">
+    </div>
+
+    <div class="container">
+        <div class="buttons-grid">
+            <a href="booking.html" class="main-btn"><i class="fas fa-calendar-check"></i> اختر المعالج واحجز</a>
+            <a href="tests.html" class="main-btn secondary-btn"><i class="fas fa-file-alt"></i> الاختبارات النفسية</a>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">من نحن</h2>
+            <div class="about-text">
+                <p>في <strong>نفس مطمئنة</strong>، نؤمن بأن الصحة النفسية هي أساس الحياة المتوازنة. يضم فريقنا نخبة من المعالجين النفسيين تحت إشراف د. ربيع حمادة، أخصائي الطب النفسي والأعصاب وعلاج الإدمان. نقدم خدماتنا بسرية تامة واحترافية عالية، ونساندك في رحلتك نحو التعافي والاطمئنان النفسي.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">شهادات عملائنا</h2>
+            <div class="section-subtitle">تجارب حقيقية لأشخاص استعادوا توازنهم</div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card"><div class="testimonial-text">"مكان آمن ومريح، فريق محترف جداً. ساعدوني أتجاوز القلق بعد ما كنت حاسة إني لوحدي."</div><div class="client-name"><i class="fas fa-star" style="color:#F4A261;"></i> - نادين خ.</div></div>
+                <div class="testimonial-card"><div class="testimonial-text">"د. ربيع حمادة فاهم جداً وخطة العلاج كانت واضحة من أول يوم. بشكر كل المعالجين."</div><div class="client-name"><i class="fas fa-star" style="color:#F4A261;"></i> - محمود ر.</div></div>
+                <div class="testimonial-card"><div class="testimonial-text">"الاختبارات دقتها عالية وحسيت إنهم مهتمين بيا فعلاً، مش مجرد جلسات روتينية."</div><div class="client-name"><i class="fas fa-star" style="color:#F4A261;"></i> - سلمى ع.</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="contact-grid">
+                <a href="https://wa.me/201228344242" target="_blank" class="contact-btn"><i class="fab fa-whatsapp"></i><span>واتساب</span><div class="detail">01228344242</div></a>
+                <a href="https://www.facebook.com/profile.php?id=61563422996209" target="_blank" class="contact-btn"><i class="fab fa-facebook-f"></i><span>فيسبوك</span><div class="detail">العيادة النفسية</div></a>
+                <a href="mailto:rabea2737@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i><span>البريد الإلكتروني</span><div class="detail">rabea2737@gmail.com</div></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 مركز نفس مطمئنة - جميع الحقوق محفوظة | تحت إشراف د. ربيع حمادة</p>
+    </footer>
+</body>
+</html>
